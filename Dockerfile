@@ -1,4 +1,4 @@
-# 1. 完美匹配你 AutoDL 版本的地基（PyTorch 2.1.1 + CUDA 11.8 + C++编译工具链）
+# 1. 完美匹配你 AutoDL 版本的地基（PyTorch 2.1.2 + CUDA 11.8 + C++编译工具链）
 FROM pytorch/pytorch:2.1.2-cuda11.8-cudnn8-devel
 # 2. 设置环境变量，防止安装时卡在时区/键盘选择界面
 ENV DEBIAN_FRONTEND=noninteractive
