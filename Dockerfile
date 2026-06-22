@@ -40,6 +40,7 @@ RUN pip install --no-cache-dir \
 # 6. 从 GitHub 源码拉取 CLIP
 RUN pip install --no-cache-dir git+https://github.com/openai/CLIP.git
 
-# 7. 再次迎战终极 BOSS
-# 加了 MAX_JOBS=1 后，系统会慢条斯理地安全编译，绝不会再崩溃
-RUN pip install --no-cache-dir causal-conv1d mamba-ssm
+# 7. 终极逃课大法：直接安装官方预编译的 Wheel 包（彻底跳过编译阶段！）
+# 以下链接完美匹配咱们的底层环境：PyTorch 2.1 + CUDA 11.8 + Python 3.10
+RUN pip install https://github.com/Dao-AILab/causal-conv1d/releases/download/v1.1.1/causal_conv1d-1.1.1+cu118torch2.1cxx11abiFALSE-cp310-cp310-linux_x86_64.whl
+RUN pip install https://github.com/state-spaces/mamba/releases/download/v1.1.1/mamba_ssm-1.1.1+cu118torch2.1cxx11abiFALSE-cp310-cp310-linux_x86_64.whl
